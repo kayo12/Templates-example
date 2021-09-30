@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>Document</title>
+    <script src="jscolor.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="rich-text">
+            <ul id="features">
+                <li>
+                    <div class="btn-icons">
+                        <button onclick="Formatar(this)" value="copy" class="fas fa-copy"></button>
+                        <button onclick="Formatar(this)" value="past" class="fas fa-paste"></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="btn-icons">
+                        <button onclick="Formatar(this)" value="maior">+ A</button>
+                        <button onclick="Formatar(this)" value="menor">- A</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="btn-icons">
+                        <button onclick="Formatar(this)" value="negrito" class="btn-rich fas fa-bold"></button>
+                        <button onclick="Formatar(this)" value="sublinhado" class="fas fa-underline"></button>
+                        <button onclick="Formatar(this)" value="italico" class="fas fa-italic"></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="btn-icons">
+                        <button onclick="Formatar(this)" value="esquerda" class="fas fa-align-left"></button>
+                        <button onclick="Formatar(this)" value="centralizado"class="fas fa-align-justify"></button>
+                        <button onclick="Formatar(this)" value="direita" class="fas fa-align-right"></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="btn-icons">
+                        <button onclick="Formatar(this)" value="naoOrdenada" class="fas fa-list-ul"></button>
+                        <button onclick="Formatar(this)" value="ordenada" class="fas fa-list-ol"></button>
+                    </div>
+                </li>
+                <li>
+                    <select id="fontes">
+                        <option>Fonte</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </li>
+                <li>
+                    <button  data-jscolor="{value:'rgba(255,160,0,0.5)', previewSize:60}"></button></li>
+            </ul>
+            <div name="" id="textarea-id" contentEditable="true"></div>
+            <button>Publicar</button>
+            <h2> Postagens: </h2>
+        </div>
+    </div>
+<script>
+    function Formatar(e){
+      var texto = document.querySelector('#textarea-id');  
+    console.log("entrou no 1" + selectedText);
+      let font, result,selectedText;
+      switch(e.value){
+          case "maior":
+            if(!window.getSelection){
+                if(texto.style.fontSize == ''){
+                    texto.style.fontSize = '16px'
+                }
+                font = texto.style.fontSize
+                font = font.replace("px","")
+                result = Number(font) + 16;
+                result = result + "px";
+                texto.style.fontSize = result.toString();
+            }
+            if(window.getSelection){
+                selectedText = window.getSelection;
+                    
+                font = selectedText.style.fontSize;
+                font = font.replace("px","");
+                result = Number(font) + 16;
+                result = result + "px";
+                selectedText.style.fontSize = result.toString();
+            }
+          break;
+          case "menor":
+           if(selectedText == undefined){ 
+               if(texto.style.fontSize == ''){
+                    texto.style.fontSize = "16px";
+                }    
+                    font = texto.style.fontSize;
+                    font = font.replace("px","")
+                    result = Number(font) - 16;
+                    result = result + "px";
+                    texto.style.fontSize = result.toString();                    
+            }
+            if(selectedText != undefined){
+                if(selectedText.style.fontSize == ''){
+                    selectedText.style.fontSize = "16px";
+                }    
+                    font = selectedText.style.fontSize;
+                    font = font.replace("px","")
+                    result = Number(font) - 16;
+                    result = result + "px";
+                    texto.style.fontSize = result.toString();
+            }
+          break;
+          case "negrito":
+              console.log(texto.style.fontWeight)
+              if(texto.style.fontWeight == "bolder"){
+                  texto.style.fontWeight = ""
+              }else{
+                  texto.style.fontWeight = "bolder"
+              }  
+           break;
+           case "sublinhado":
+               if(texto.style.textDecoration == "underline"){
+                   texto.style.textDecoration = "none"
+               }else{
+                   texto.style.textDecoration = "underline"
+               }
+           break;
+           case "italico":
+                if(texto.style.fontStyle == "italic"){
+                    texto.style.fontStyle = ""
+                }else{
+                    texto.style.fontStyle = "italic"
+                }
+           break;     
+           case "direita":
+                if(texto.style.textAlign != "right"){
+                    texto.style.textAlign = "right" 
+                }
+           break;     
+           case "centralizado":
+               if(texto.style.textAlign != "center"){
+                    texto.style.textAlign = "center"
+               }
+           break;
+           case "esquerda":
+               if(texto.style.textAlign != "justify"){
+                    texto.style.textAlign = "justify"
+               }
+           break;
+           case "naoOrdenada":
+               if(document.querySelector('#listGeneric')){
+                //    let list = document.querySelector('#listGeneric')
+                //     let textLI = document.createElement("li");  
+                //     textLI.appendChild(document.createTextNode("mais um"))  
+                //     list.appendChild(textLI)
+                console.log("entrou no listGeneric")
+               }else{
+                    let text = document.querySelector('#textarea-id').innerText
+                    if(text.indexOf("\n") > -1){
+                        let li = [];
+                        let ArrayList = text.split("\n")
+                        for(let i = 0; i < ArrayList.length; i++){
+                            console.log("Entrou no for")
+                            li = document.createElement("li")
+                            li.appendChild(document.createTextNode(ArrayList[i]))                            
+                        }
+                        console.log(li)
+                    }
+               }
+             break;  
+      } 
+}
+</script>
+</body>
+</html>
