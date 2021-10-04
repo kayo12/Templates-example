@@ -65,110 +65,49 @@
     </div>
 <script>
     function Formatar(e){
-      var texto = document.querySelector('#textarea-id');  
-    console.log("entrou no 1" + selectedText);
-      let font, result,selectedText;
+      let font, selectedText,result;
       switch(e.value){
           case "maior":
-            if(!window.getSelection){
-                if(texto.style.fontSize == ''){
-                    texto.style.fontSize = '16px'
-                }
-                font = texto.style.fontSize
-                font = font.replace("px","")
-                result = Number(font) + 16;
-                result = result + "px";
-                texto.style.fontSize = result.toString();
-            }
             if(window.getSelection){
                 selectedText = window.getSelection;
-                    
-                font = selectedText.style.fontSize;
-                font = font.replace("px","");
-                result = Number(font) + 16;
-                result = result + "px";
-                selectedText.style.fontSize = result.toString();
+               if(selectedText.rangeCount){
+                var span = document.createElement("span");
+                font = span.style.fontSize !=  '' ? span.style.fontSize : "16px";
+                font  = font.split("px");   
+                result = Number(font[0]) + 16
+                console.log("result" + result);
+                var range = selectedText.getRangeAt(0).cloneRange();
+                range.surroundContents(span);
+                selectedText.removeAllRanges();
+                selectedText.addRange(range);
+
+               }     
+                
             }
           break;
           case "menor":
-           if(selectedText == undefined){ 
-               if(texto.style.fontSize == ''){
-                    texto.style.fontSize = "16px";
-                }    
-                    font = texto.style.fontSize;
-                    font = font.replace("px","")
-                    result = Number(font) - 16;
-                    result = result + "px";
-                    texto.style.fontSize = result.toString();                    
-            }
-            if(selectedText != undefined){
-                if(selectedText.style.fontSize == ''){
-                    selectedText.style.fontSize = "16px";
-                }    
-                    font = selectedText.style.fontSize;
-                    font = font.replace("px","")
-                    result = Number(font) - 16;
-                    result = result + "px";
-                    texto.style.fontSize = result.toString();
-            }
+          
           break;
           case "negrito":
-              console.log(texto.style.fontWeight)
-              if(texto.style.fontWeight == "bolder"){
-                  texto.style.fontWeight = ""
-              }else{
-                  texto.style.fontWeight = "bolder"
-              }  
+             
            break;
            case "sublinhado":
-               if(texto.style.textDecoration == "underline"){
-                   texto.style.textDecoration = "none"
-               }else{
-                   texto.style.textDecoration = "underline"
-               }
+              
            break;
            case "italico":
-                if(texto.style.fontStyle == "italic"){
-                    texto.style.fontStyle = ""
-                }else{
-                    texto.style.fontStyle = "italic"
-                }
+              
            break;     
            case "direita":
-                if(texto.style.textAlign != "right"){
-                    texto.style.textAlign = "right" 
-                }
+               
            break;     
            case "centralizado":
-               if(texto.style.textAlign != "center"){
-                    texto.style.textAlign = "center"
-               }
+              
            break;
            case "esquerda":
-               if(texto.style.textAlign != "justify"){
-                    texto.style.textAlign = "justify"
-               }
+              
            break;
            case "naoOrdenada":
-               if(document.querySelector('#listGeneric')){
-                //    let list = document.querySelector('#listGeneric')
-                //     let textLI = document.createElement("li");  
-                //     textLI.appendChild(document.createTextNode("mais um"))  
-                //     list.appendChild(textLI)
-                console.log("entrou no listGeneric")
-               }else{
-                    let text = document.querySelector('#textarea-id').innerText
-                    if(text.indexOf("\n") > -1){
-                        let li = [];
-                        let ArrayList = text.split("\n")
-                        for(let i = 0; i < ArrayList.length; i++){
-                            console.log("Entrou no for")
-                            li = document.createElement("li")
-                            li.appendChild(document.createTextNode(ArrayList[i]))                            
-                        }
-                        console.log(li)
-                    }
-               }
+               
              break;  
       } 
 }
