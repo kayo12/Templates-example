@@ -1,114 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="Style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <title>Document</title>
+       <title>Document</title>
     <script src="jscolor.js"></script>
 </head>
 <body>
     <div id="container">
+       
         <div id="rich-text">
+            <h2>Editor Rich-text</h2><br>
             <ul id="features">
                 <li>
                     <div class="btn-icons">
-                        <button onclick="Formatar(this)" value="copy" class="fas fa-copy"></button>
-                        <button onclick="Formatar(this)" value="past" class="fas fa-paste"></button>
+                        <button onclick="Formatar(this)" id="copy" class="fas fa-copy"></button>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="btn-icons">
+                        <button onclick="Formatar(this)" id="negrito" class="btn-rich fas fa-bold"></button>
+                        <button onclick="Formatar(this)" id="sublinhado" class="fas fa-underline"></button>
+                        <button onclick="Formatar(this)" id="italico" class="fas fa-italic"></button>
                     </div>
                 </li>
                 <li>
                     <div class="btn-icons">
-                        <button onclick="Formatar(this)" value="maior">+ A</button>
-                        <button onclick="Formatar(this)" value="menor">- A</button>
+                        <button onclick="Formatar(this)" id="esquerda" class="fas fa-align-left"></button>
+                        <button onclick="Formatar(this)" id="centralizado"class="fas fa-align-justify"></button>
+                        <button onclick="Formatar(this)" id="direita" class="fas fa-align-right"></button>
                     </div>
                 </li>
                 <li>
                     <div class="btn-icons">
-                        <button onclick="Formatar(this)" value="negrito" class="btn-rich fas fa-bold"></button>
-                        <button onclick="Formatar(this)" value="sublinhado" class="fas fa-underline"></button>
-                        <button onclick="Formatar(this)" value="italico" class="fas fa-italic"></button>
+                        <button onclick="Formatar(this)" id="naoOrdenada" class="fas fa-list-ul"></button>
+                        <button onclick="Formatar(this)" id="Ordenada" class="fas fa-list-ol"></button>
                     </div>
                 </li>
                 <li>
-                    <div class="btn-icons">
-                        <button onclick="Formatar(this)" value="esquerda" class="fas fa-align-left"></button>
-                        <button onclick="Formatar(this)" value="centralizado"class="fas fa-align-justify"></button>
-                        <button onclick="Formatar(this)" value="direita" class="fas fa-align-right"></button>
-                    </div>
+                        <select onchange="Formatar(this)" id="fontFamily">
+                            <option>Fonte</option>
+                            <option style="font-family:Georgia ;">Georgia</option>
+                            <option style="font-family:Palatino Linotype;">Palatino Linotype</option>
+                            <option style="font-family:Arial;">Arial</option>
+                            <option style="font-family:Arial Black;">Arial Black</option>
+                            <option style="font-family:Impact;">Impact</option>
+                        </select>
+                        <button onclick="Formatar(this)" id="fontColor" data-jscolor="{value:'rgba(255,160,0,0.5)', previewSize:50}"></button>
                 </li>
                 <li>
-                    <div class="btn-icons">
-                        <button onclick="Formatar(this)" value="naoOrdenada" class="fas fa-list-ul"></button>
-                        <button onclick="Formatar(this)" value="ordenada" class="fas fa-list-ol"></button>
-                    </div>
-                </li>
-                <li>
-                    <select id="fontes">
-                        <option>Fonte</option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
+                    <select name="" id="tamanho" class="btn-icons" onchange="Formatar(this)">
+                        <option value="">0</option>
+                        <option value="1">15</option>
+                        <option value="2">20</option>
+                        <option value="3">25</option>
+                        <option value="4">30</option>
+                        <option value="5">35</option>
+                        <option value="6">40</option>
+                        <option value="7">45</option>
                     </select>
                 </li>
-                <li>
-                    <button  data-jscolor="{value:'rgba(255,160,0,0.5)', previewSize:60}"></button></li>
             </ul>
-            <div name="" id="textarea-id" contentEditable="true"></div>
-            <button>Publicar</button>
-            <h2> Postagens: </h2>
+            <div name="" id="textarea-id" onclick="ToEdit()"></div>
         </div>
     </div>
 <script>
-    function Formatar(e){
-      let font, selectedText,result;
-      switch(e.value){
-          case "maior":
-            if(window.getSelection){
-                selectedText = window.getSelection;
-               if(selectedText.rangeCount){
-                var span = document.createElement("span");
-                font = span.style.fontSize !=  '' ? span.style.fontSize : "16px";
-                font  = font.split("px");   
-                result = Number(font[0]) + 16
-                console.log("result" + result);
-                var range = selectedText.getRangeAt(0).cloneRange();
-                range.surroundContents(span);
-                selectedText.removeAllRanges();
-                selectedText.addRange(range);
-
-               }     
-                
+    function ToEdit(){
+        document.querySelector("div#textarea-id").contentEditable = true;
+    }
+    function Formatar(e){   
+      switch(e.id){
+          case "tamanho":
+          try{    
+            
+           if(window.getSelection){ 
+                 document.designMode = "on"
+                document.execCommand("fontSize",false, e.value)
+                document.designMode = "off"
             }
-          break;
-          case "menor":
-          
+     
+        }catch(e){
+            console.log(e)
+        }
           break;
           case "negrito":
-             
+             document.execCommand('bold');
+             document.designMode = "off"
            break;
            case "sublinhado":
-              
+              document.execCommand('underline');
+              document.designMode = "off";
            break;
            case "italico":
-              
+              document.execCommand('italic')
+              document.designMode = "off";
            break;     
            case "direita":
-               
+               document.execCommand('justifyRight');
+               document.designMode = "off";
            break;     
            case "centralizado":
-              
+              document.execCommand('justifyCenter')
+              document.designMode = "off";
            break;
            case "esquerda":
-              
+              document.execCommand('justifyLeft')
+              document.designMode = "off";
            break;
            case "naoOrdenada":
-               
-             break;  
+           document.execCommand( "insertOrderedList", false, "" );
+              document.designMode = "off";
+           break;
+           case "Ordenada":
+               console.log('Ordenada')
+                document.execCommand( 'insertUnorderedList', false, "" );
+                document.designMode = "off";
+           break;
+           case "copy":
+               document.execCommand("copy", false, "");
+               document.designMode = "off";
+                alert("Copiado")
+            break;
+           case "fontColor":
+    
+            let color = document.getElementById('fontColor')
+                document.execCommand('styleWithCSS', false, true);
+                document.execCommand("foreColor",false,color.dataset.currentColor.toString())
+                console.log(color.dataset.currentColor);
+            break;
+            case "fontFamily":
+                 document.execCommand('fontName', false, e.innerText);
+            break;
       } 
 }
 </script>
