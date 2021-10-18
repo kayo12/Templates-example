@@ -44,11 +44,11 @@
                 <li>
                         <select onchange="Formatar(this)" id="fontFamily">
                             <option>Fonte</option>
-                            <option style="font-family:Georgia ;">Georgia</option>
-                            <option style="font-family:Palatino Linotype;">Palatino Linotype</option>
-                            <option style="font-family:Arial;">Arial</option>
-                            <option style="font-family:Arial Black;">Arial Black</option>
-                            <option style="font-family:Impact;">Impact</option>
+                            <option value ="Georgia" style="font-family:Georgia ;">Georgia</option>
+                            <option value="Palatino Linotype" style="font-family:Palatino Linotype;">Palatino Linotype</option>
+                            <option value="Arial" style="font-family:Arial;">Arial</option>
+                            <option value="Arial Black" style="font-family:Arial Black;">Arial Black</option>
+                            <option value="Impact" style="font-family:Impact;">Impact</option>
                         </select>
                         <button onclick="Formatar(this)" id="fontColor" data-jscolor="{value:'rgba(255,160,0,0.5)', previewSize:50}"></button>
                 </li>
@@ -133,7 +133,8 @@
                 console.log(color.dataset.currentColor);
             break;
             case "fontFamily":
-                 document.execCommand('fontName', false, e.innerText);
+                console.log('fontFamily ' + e.value);
+                 document.execCommand('fontName', false, e.value);
             break;
       } 
 }
