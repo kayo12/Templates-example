@@ -50,7 +50,7 @@
                             <option value="Arial Black" style="font-family:Arial Black;">Arial Black</option>
                             <option value="Impact" style="font-family:Impact;">Impact</option>
                         </select>
-                        <button onclick="Formatar(this)" id="fontColor" data-jscolor="{value:'rgba(255,160,0,0.5)', previewSize:50}"></button>
+                        <button onclick="Formatar(this)" id="fontColor" data-jscolor="{value:'rgba(255,160,0,0.5)', previewSize:30}"></button>
                 </li>
                 <li>
                     <select name="" id="tamanho" class="btn-icons" onchange="Formatar(this)">
@@ -81,8 +81,7 @@
                  document.designMode = "on"
                 document.execCommand("fontSize",false, e.value)
                 document.designMode = "off"
-            }
-     
+            }    
         }catch(e){
             console.log(e)
         }
@@ -112,12 +111,12 @@
               document.designMode = "off";
            break;
            case "naoOrdenada":
-           document.execCommand( "insertOrderedList", false, "" );
+           document.execCommand( "insertOrderedList", false, "");
               document.designMode = "off";
            break;
            case "Ordenada":
                console.log('Ordenada')
-                document.execCommand( 'insertUnorderedList', false, "" );
+                document.execCommand( 'insertUnorderedList', false, "");
                 document.designMode = "off";
            break;
            case "copy":
@@ -127,7 +126,7 @@
             break;
            case "fontColor":
     
-            let color = document.getElementById('fontColor')
+                let color = document.getElementById('fontColor')
                 document.execCommand('styleWithCSS', false, true);
                 document.execCommand("foreColor",false,color.dataset.currentColor.toString())
                 console.log(color.dataset.currentColor);
