@@ -1,0 +1,25 @@
+.nav{
+   display: flex;
+   justify-content: center;
+   position: sticky; 
+    top: 0;
+}
+
+.nav ul {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    border-radius:  20px;
+    background-color: white;
+    opacity: 0.5;
+}
+
+.nav ul li {
+    padding: 3rem;
+    list-style-type: none;
+    font-family: times, "Times New Roman", Times, serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(53, 49, 49);
+    
+}
