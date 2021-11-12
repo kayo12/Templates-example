@@ -1,12 +1,16 @@
 import React from 'react';
 import './Home.css';
-import Nav from '../components/Nav'
-import MyLyst from '../components/MyList'
-import Footer from '../components/Footer'
+import 'font-awesome/css/font-awesome.min.css';
+import Nav from '../components/Nav';
+import Player from '../components/Player'
+import Music from '../components/Music';
+import Footer from '../components/Footer';
 
 export default props => 
     <div className="home">
         <Nav/>
-        <MyLyst/>
+        <Player/>
         <Footer/>
     </div>
+
+

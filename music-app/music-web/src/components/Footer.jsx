@@ -7,7 +7,15 @@ export default props =>
             <li>Contato</li>
             <li>API</li>
             <li>Termos de Serviço</li>
-            <li>Sobre</li>       
+            <li>Desenvolvedores</li>
+            <li>Suporte</li>
+            <li>Sobre</li>
         </ul>
         <hr/>
+        <ul>
+            <li><i className="fa fa-instagram"></i></li>
+            <li><i className="fa fa-facebook-square"></i></li>
+            <li><i className="fa fa-linkedin"></i></li>   
+        </ul>
+        <span>&copy; Copyright 2021 Diamond Music</span>
     </div>
