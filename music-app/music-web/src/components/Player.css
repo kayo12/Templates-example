@@ -2,7 +2,7 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: space-around;
 }
 .player .control-music{
@@ -11,10 +11,12 @@
     justify-content: space-between;
     align-items: center;
     height: 75%;
-    width: 500px; 
-    border: 1px solid #000;
-    background-color: #f7c15e;
-    box-shadow: 0 0 2em 0 rgb(46, 46, 46);    
+    width: 400px; 
+    border-radius: 20px;
+    border: 1px solid rgb(214, 145, 42);
+    background-color: #dfdbdb;
+    box-shadow: 0 0 2em 0 rgb(46, 46, 46);
+    padding: 0.5rem;    
 }
 .player .control-music img{
     border-radius: 50%;
@@ -25,23 +27,64 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 25%;
+    height: 100%;
     width: 100%;
-    border: 1px solid black;
+    background-color:  #dfdbdb;
+ 
 }
 .player .setup-music button{
     margin-right: 0.8rem;
-    padding: 20px;
+    padding: 18px;
     border-radius: 50%;
     border: none;
+    color:rgb(253, 156, 11);
+    background: rgb(240, 236, 236);
+    box-shadow: -2px 2px  rgb(117, 115, 115);
 }
+.player .setup-music button:hover{
+    cursor: pointer;
+}
+
+.player .setup-music button:nth-last-of-type(3){
+   padding: 27px;
+   font-size: 1.2rem;
+}
+ .player .setup-music button:first-child{
+    padding: 10px;
+ }
+ .player .setup-music button:last-child {
+    padding: 10px;
+ }
+
+ 
+
+.player  .control-music .progress-bar {
+    width: 100%;
+    height: 3px;
+    background-color:black;
+    border: 2px solid #f7c15e;
+    border-radius: 20px;
+}
+.player  .control-music .progress-bar > div {
+    height: 100%;
+    width: 30%;
+    background-color:rgb(214, 145, 42);
+}
+.player .control-music .settings-music{
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:100%;
+}
+
 .player .list-music{
     background-color: #f7c15e;
     border: none;
     display: flex;
     flex-direction: column;
     height: 75%;
-    width: 300px;
-    border-radius:  0 15px 15px 0;
+    width: 460px;
+    border-radius: 15px;
 }
 
