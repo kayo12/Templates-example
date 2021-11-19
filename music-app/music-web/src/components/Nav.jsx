@@ -1,10 +1,11 @@
 import React from 'react';
 import './Nav.css' 
 import { Link } from 'react-router-dom'
+import Logo from '../assests/img/logo-dimond.png'
 export default props => 
     <nav className="nav">
-        <div >
-            <img/>
+        <div className="nav-logo">
+            <img src={Logo} alt="" />
         </div>
         <ul>
             <li><i className="fa fa-home" title="Home" ></i> </li>

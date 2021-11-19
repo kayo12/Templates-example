@@ -2,17 +2,14 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: space-around;
 }
 .player .control-music{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 75%;
-    width: 400px; 
-    border-radius: 20px;
+    align-items: stretch;
+    width: 60%; 
     border: 1px solid rgb(214, 145, 42);
     background-color: #dfdbdb;
     box-shadow: 0 0 2em 0 rgb(46, 46, 46);
@@ -30,21 +27,19 @@
     height: 100%;
     width: 100%;
     background-color:  #dfdbdb;
- 
 }
 .player .setup-music button{
     margin-right: 0.8rem;
     padding: 18px;
     border-radius: 50%;
     border: none;
-    color:rgb(253, 156, 11);
+    color: rgb(195 79 132 / 1);
     background: rgb(240, 236, 236);
     box-shadow: -2px 2px  rgb(117, 115, 115);
 }
 .player .setup-music button:hover{
     cursor: pointer;
 }
-
 .player .setup-music button:nth-last-of-type(3){
    padding: 27px;
    font-size: 1.2rem;
@@ -55,20 +50,17 @@
  .player .setup-music button:last-child {
     padding: 10px;
  }
-
- 
-
 .player  .control-music .progress-bar {
-    width: 100%;
+    width: 99%;
     height: 3px;
     background-color:black;
-    border: 2px solid #f7c15e;
+    border: 1px solid rgb(195 79 132 / 1);
     border-radius: 20px;
 }
 .player  .control-music .progress-bar > div {
     height: 100%;
     width: 30%;
-    background-color:rgb(214, 145, 42);
+    background-color:rgb(195 79 132 / 1);
 }
 .player .control-music .settings-music{
     height: 30%;
@@ -77,14 +69,52 @@
     justify-content: space-between;
     width:100%;
 }
-
+.player  .control-music span {
+   display: block;
+   font-weight: 500;
+   height : 10%;
+   text-align: center;
+}
 .player .list-music{
-    background-color: #f7c15e;
+    background-color: #111010; 
     border: none;
     display: flex;
-    flex-direction: column;
     height: 75%;
-    width: 460px;
+    min-width: 80vw;
     border-radius: 15px;
 }
+.player .list-music ul {
+    min-width: 40%;
+   display: inline;
+  padding-bottom: 1rem;
+}
 
+.player .list-music ul > li {
+    border-radius:6px;
+    padding: 1em 0;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgb(116, 49, 116);
+    font-size: 0.8rem;
+    color:rgb(240, 236, 240);
+
+}
+
+.player .list-music ul > li i{
+    color:rgb(116, 49, 116);
+    vertical-align: middle;
+    margin-right: 1rem;
+    font-size: 1.8rem;
+}
+
+.player .btn-back{
+    width: 12vw;
+    justify-self: space-between;
+}
+
+.player .btn-back button{
+ padding: 1rem;
+ border-radius: 15px;
+ outline-style: none;  
+ border: none;
+}
