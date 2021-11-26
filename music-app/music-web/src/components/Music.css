@@ -45,6 +45,7 @@
 
 .music .img-music{
     overflow-y: hidden;
+    max-width: 50%;
 }
 .music img{
     width: 100%;

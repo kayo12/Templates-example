@@ -80,15 +80,14 @@
     border: none;
     display: flex;
     height: 75%;
-    min-width: 80vw;
-    border-radius: 15px;
+    min-width: 70vw;
+    border-radius: 18px;
 }
 .player .list-music ul {
     min-width: 40%;
    display: inline;
   padding-bottom: 1rem;
 }
-
 .player .list-music ul > li {
     border-radius:6px;
     padding: 1em 0;
@@ -99,19 +98,16 @@
     color:rgb(240, 236, 240);
 
 }
-
 .player .list-music ul > li i{
     color:rgb(116, 49, 116);
     vertical-align: middle;
     margin-right: 1rem;
     font-size: 1.8rem;
 }
-
 .player .btn-back{
     width: 12vw;
     justify-self: space-between;
 }
-
 .player .btn-back button{
  padding: 1rem;
  border-radius: 15px;
