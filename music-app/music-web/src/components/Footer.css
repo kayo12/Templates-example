@@ -1,7 +1,7 @@
 .footer {
     background-color:#111010;
-    height: 130px;
-    padding: 1.5rem;
+    height: 150px;
+    padding: 1.2rem;
     position: relative;
     bottom: 0;
     color:rgb(240, 143, 53);
@@ -15,19 +15,32 @@
     list-style-type: none;
     justify-content: center;
 }
-
 .footer hr {
     color:rgb(245, 245, 245);
     opacity: 0.2;
     margin: 1rem 1rem 0 1rem;
 }
-.footer ul li {
-    padding-left: 1.5rem;
+.footer .info-web > li{
+    padding: 0 3rem;
+}
+.footer .icons-media {
+    height: 50px;
+    width: 100%;
+}
+.footer .icons-media li  i{
+    margin-left: 1.8rem;
+}
+.footer .icons-media li{
+    display: block;
+    text-align: center;
 }
 .footer ul li i {
-    font-size: 1.6rem;
+    padding: 0.3rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    background-color: rgb(255, 255, 255);
+    color:rgb(146, 39, 146);
 }
-
 .footer > span{
     display: block;
     text-align: center;

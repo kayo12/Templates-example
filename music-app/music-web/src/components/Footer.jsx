@@ -3,7 +3,7 @@ import './Footer.css'
 
 export default props => 
     <div className="footer">
-        <ul>
+        <ul className="info-web">
             <li>Contato</li>
             <li>API</li>
             <li>Termos de Serviço</li>
@@ -12,7 +12,7 @@ export default props =>
             <li>Sobre</li>
         </ul>
         <hr/>
-        <ul>
+        <ul className="icons-media">
             <li><i className="fa fa-instagram"></i></li>
             <li><i className="fa fa-facebook-square"></i></li>
             <li><i className="fa fa-linkedin"></i></li>   
