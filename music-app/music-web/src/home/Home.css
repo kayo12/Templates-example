@@ -6,7 +6,7 @@
 }
 .home{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-rows: 15%
     85%
     1fr;

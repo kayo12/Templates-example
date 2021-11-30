@@ -1,10 +1,10 @@
 .footer {
     background-color:#111010;
     height: 150px;
-    padding: 1.2rem;
+    padding: 1rem;
     position: relative;
     bottom: 0;
-    color:rgb(240, 143, 53);
+    color:#df24e6;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +28,7 @@
     width: 100%;
 }
 .footer .icons-media li  i{
-    margin-left: 1.8rem;
+    margin-right: 1.8rem;
 }
 .footer .icons-media li{
     display: block;
@@ -38,8 +38,8 @@
     padding: 0.3rem;
     border-radius: 10px;
     font-size: 1.3rem;
-    background-color: rgb(255, 255, 255);
-    color:rgb(146, 39, 146);
+    background-color: #ffffff;
+    color:rgb(190, 22, 182);
 }
 .footer > span{
     display: block;

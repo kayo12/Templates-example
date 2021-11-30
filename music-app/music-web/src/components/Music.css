@@ -1,7 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+
 .music{
     display: flex;
     flex-direction: column;
@@ -16,7 +13,6 @@
     display: flex;
     justify-content: center;
 }
-
 .music .Info-music{
     display: flex;
     justify-content: flex-start;
@@ -31,18 +27,15 @@
    flex-direction: column;
    justify-content: center;
 }
-
 .music .Info-music .description-music span{
-    color: #FF9033;
+    color: #d017d6;
     font-size: 4rem;
     font-weight: 800;
 }
-
 .music .Info-music .description-music p {
     color:cornsilk;
     font-size: 1rem;
 }
-
 .music .img-music{
     overflow-y: hidden;
     max-width: 50%;
