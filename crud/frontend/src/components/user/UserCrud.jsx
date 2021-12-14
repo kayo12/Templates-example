@@ -14,7 +14,6 @@ const initialState = {
     list: []
 }
 
-
 export default class UserCrud extends Component {
 
     state = { ...initialState }
@@ -47,13 +46,11 @@ export default class UserCrud extends Component {
         return list
     }
 
-
     updateField(event) {
         const user = { ...this.state.user }
         user[event.target.name] = event.target.value
         this.setState({ user })
     }
-
 
     renderForm() {
         return (
