@@ -1,0 +1,17 @@
+.info-musics{
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+
+.container-Search{
+    background-color:cadetblue;
+    display: flex;
+    
+    padding: 5rem;
+    width: 30%;
+}
