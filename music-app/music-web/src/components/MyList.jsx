@@ -2,6 +2,7 @@ import React ,{Component} from 'react';
 import axios from 'axios';
 import qs from 'qs';
 import './MyList.css';
+import album  from '../assests/img/eminem-album.png'
 
 const initial = {
     title: 'Lista de musicas e generos',
@@ -75,6 +76,8 @@ async getListAlbum(id_album) {
           'Authorization': `Bearer ${access_token}`
         }
       });
+
+      console.log(await response.data.images[0])
     
     this.setState({ listAlbum: await response.data})
 
@@ -90,30 +93,30 @@ async getListAlbum(id_album) {
      console.log(this.state.listAlbum.name)
     }
 
-  CheckValue(){
-
-  }
-
   render(){
    
     // AQUI EU PEGO O VALOR DA FUNÇÃO PRA VARIAVEL POSTS
       //this.getAudioFeatures_Track('07A0whlnYwfWfLQy4qh3Tq')
         return(
                 <div className="info-musics">
-                     <span>{this.state.title}</span>
-                     <p>{this.state.msg}</p>
-                     <div className="container-Search">
-                       <h4> Digite o nome do artista ou album</h4>
-                        <input type="text" name="search" id="inputSearch"/>
-                        <button onClick={e => this.buscar(e)}>Buscar</button>
-                      <p>{JSON.stringify(this.state.listAlbum.images)}</p>
-                       </div>
+                     <h4> Digite o nome do artista ou album</h4>
+                       <div className="container-Search">
+                         
+                          <input type="text" name="search" id="inputSearch" placeholder="Musicas, Albuns, artistas..."/>
+                          <button onClick={e => this.buscar(e)} >Buscar</button>
+                        </div>
+                        <div className="carousel">
+                            <div className="list-album"><img src={album} className="img-album"/><div className="item-album"></div></div>
+                            <div className="list-album"><img src={album} className="img-album"/><div className="item-album"></div></div>
+                            <div className="list-album"><img src={album} className="img-album"/><div className="item-album"></div></div>
+                            <div className="list-album"><img src={album} className="img-album"/><div className="item-album"></div></div>
+                            <div className="list-album"><img src={album} className="img-album"/><div className="item-album"></div></div>
+                            <div className="list-album"><img src={album} className="img-album"/><div className="item-album"></div></div>
+                        </div>
+                          <p>{JSON.stringify(this.state.listAlbum.images)}</p>
                 </div>
         )
       }  
-
-
-
 
 } 
 

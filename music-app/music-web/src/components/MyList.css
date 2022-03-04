@@ -1,17 +1,67 @@
 .info-musics{
+    padding: 0 1rem;
     width: 100vw;
-    height: 70vh;
+    height: 80vh;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
     flex-direction: column;
 }
 
-
 .container-Search{
-    background-color:cadetblue;
     display: flex;
-    
-    padding: 5rem;
-    width: 30%;
+    justify-content: flex-start;
+    padding: 2rem;
+    width: 60%;
 }
+
+.container-Search #inputSearch {
+    padding: 1rem;
+    width: 60%;
+    border-radius: 13px;
+    border: none;
+}
+
+.container-Search button{
+    padding: 1rem;
+    border-radius:  14px;
+    border: none;
+    margin-left: 0.8rem;
+    font-weight: bolder;
+    background-color: #A569BD;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.carousel .list-album{
+    width: 200px;
+    height: 300px;
+    background-color: rgb(228, 197, 197);
+    margin-left: 0.8rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    box-sizing: border-box;    
+}
+
+.carousel .list-album .item-album{
+    width: 100%;
+    height: 50%;
+    border-radius: 0 0 15px 15px  ;
+    background-color: #845b94;
+    clip-path: polygon(0 35%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.carousel .list-album .img-album{
+    align-self:  flex-start;
+   height: 30%;
+   margin: 1.6rem auto;
+}
+
