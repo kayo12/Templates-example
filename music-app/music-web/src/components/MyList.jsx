@@ -99,10 +99,8 @@ export default class Mylist extends Component {
     //this.getAudioFeatures_Track('07A0whlnYwfWfLQy4qh3Tq')
     return (
       <div className="info-musics">
-        <h4> Digite o nome do artista ou album</h4>
         <div className="container-Search">
-
-          <input type="text" name="search" id="inputSearch" placeholder="Musicas, Albuns, artistas..." />
+          <input type="text" name="search" id="inputSearch" placeholder="Digite o nome da Musicas, Albuns, artistas..." />
           <button onClick={e => this.buscar(e)} >Buscar</button>
         </div>
         <div className="carousel">

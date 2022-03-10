@@ -18,19 +18,21 @@
 .container-Search{
     display: flex;
     justify-content: flex-start;
-    padding: 2rem;
+    padding: 1rem 0;
     width: 60%;
+    height: 50px;
+    margin: 1rem 0;
 }
 
 .container-Search #inputSearch {
-    padding: 1rem;
+    padding: 17px;
     width: 60%;
     border-radius: 13px;
     border: none;
 }
 
 .container-Search button{
-    padding: 1rem;
+    padding: 0.6rem 1rem;
     border-radius:  14px;
     border: none;
     margin-left: 0.8rem;

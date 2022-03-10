@@ -4,7 +4,7 @@
    justify-content: space-around;
    position: sticky;
    top: 0;
-  
+    z-index: 999;
     background-color: #0e0d0d;
 }
 .nav .nav-logo{
