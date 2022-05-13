@@ -1,11 +1,9 @@
 .nav{
-    height: 80px;
+   height: 80px;
    display: flex;
    justify-content: space-around;
-   position: sticky;
-   top: 0;
-    z-index: 999;
-    background-color: #0e0d0d;
+
+   background-color: #0e0d0d;
 }
 .nav .nav-logo{
     display: flex;
@@ -33,6 +31,11 @@
     padding: 1rem;
 }
 
+.nav .hidden-icon{
+    display: none;
+    transition: 3s;
+}
+
 .nav .nav-itens  i{
     margin-left: 3rem;
     font-size: 1.5rem;
@@ -51,6 +54,15 @@
     padding: 1rem;
 }
 
-
-
-
+@media (max-width: 775px){
+    .nav .nav-itens a{
+        display: none;
+    }
+    .nav .hidden-icon{
+        display: flex;
+        margin-right: 1rem;
+    }
+    .hidden-icon i {
+        padding-left: none;
+    }
+}

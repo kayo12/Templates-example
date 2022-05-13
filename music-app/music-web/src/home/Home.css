@@ -7,9 +7,9 @@
 .home{
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 15%
-    85%
-    1fr;
+    grid-template-rows: 1fr
+    95%
+    15%;
     grid-template-areas: 
         "nav"
         "content"
@@ -29,4 +29,3 @@ nav.nav{
 .footer{
     grid-area: footer;
 }
-
