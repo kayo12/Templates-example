@@ -1,7 +1,10 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import './Music.css'
 import Listen_Music from '../assests/img/home-listen-music.png'
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default props =>
     <div className="music"> 
         <div className="Info-music">

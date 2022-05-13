@@ -17,34 +17,41 @@
 
 .container-Search{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 1rem 0;
-    width: 60%;
-    height: 50px;
+    width: 100%;
+    height: 60px;
     margin: 1rem 0;
+
 }
 
 .container-Search #inputSearch {
-    padding: 17px;
+    
+    padding: 0 17px;
     width: 60%;
+    max-height: 35px;
     border-radius: 13px;
     border: none;
+    
 }
 
 .container-Search button{
-    padding: 0.6rem 1rem;
+    padding: 0 1rem;
     border-radius:  14px;
     border: none;
     margin-left: 0.8rem;
     font-weight: bolder;
     background-color: #A569BD;
+    cursor: pointer;
+    max-height: 35px;
 }
 
 .carousel {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    
+    width: 100%;
+
 }
 
 .carousel .list-album{
@@ -58,6 +65,7 @@
     align-items: flex-end;
     justify-content: space-between;
     box-sizing: border-box;   
+    margin-bottom: 1rem;
 }
 
 .carousel .list-album .item-album{
