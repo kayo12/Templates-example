@@ -1,6 +1,7 @@
 import React from 'react'
 import './Player.css'
 import imgPlayer from '../assests/img/music-song.png'
+// eslint-disable-next-line import/no-anonymous-default-export
 export default props =>
     <div className="player">
         <div className="list-music">

@@ -2,14 +2,16 @@
    height: 80px;
    display: flex;
    justify-content: space-around;
-
+   padding: 0.5rem 0 0 0.5rem;
    background-color: #0e0d0d;
 }
 .nav .nav-logo{
     display: flex;
     align-items: center;
     height: 80%;
+    font-size: 0.9rem;
     overflow: hidden;
+    text-align: center;
 }
 
 .nav #logo{
