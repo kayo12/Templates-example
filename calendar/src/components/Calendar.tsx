@@ -2,8 +2,6 @@ import Mes  from './Mes'
 import { useState, useEffect } from 'react';
 export default function Calendar(props) {
 
-
-  
   const currentMes = new Date().getMonth();
   var [mes, setMes] = useState(0)
   useEffect(() => {
