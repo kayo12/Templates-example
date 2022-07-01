@@ -1,15 +1,15 @@
 import Mes  from './Mes'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Children } from 'react';
+import useCalendar from '../hooks/useCalendar'
 export default function Calendar(props) {
 
-  const currentMes = new Date().getMonth();
-  var [mes, setMes] = useState(0)
-  useEffect(() => {
-    setMes(mes = currentMes)
-  })
-  
-  return (
-    <div className="calendar">
+    var cal = useCalendar()
+    // const rows = cal.arrDays.map((current) => {
+    //    return <td>{current}</td>
+    // })
+
+  return ( 
+   <div className="calendar">
       <Mes mes={mes}/>
       <table className="table-calender">
         <thead>
@@ -25,51 +25,11 @@ export default function Calendar(props) {
         </thead>
         <tbody>
           {/* Criar um loop no dia da semana aqui */}
+        
           <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
+            {rows}
           </tr>
-          <tr>
-            <td>8</td>
-            <td>9</td>
-            <td>10</td>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-          </tr>
+          
         </tbody>
       </table>
     </div>

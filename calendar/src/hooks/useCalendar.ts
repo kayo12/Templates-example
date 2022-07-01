@@ -1,22 +1,23 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 
-export default function useCalendar(){
-    
-    const [days,setDays] = useState([])
+export default function useCalendar() {
 
-    function getDaysAndMonth(month){
+    const [currentmonth, setCurrenMonth] = useState({
+        fisrtDayWeek: 0,
+        mes: 0,
+        arrDays: []
+    })
+  useEffect(() => {  
 
-       var daysMonth = new Date(new Date().getFullYear(), month, 0);
+            let daysMonth = new Date(new Date().getFullYear(), 1, 0);
+            let i = 1
 
-        return {
-                days: daysMonth.getDate(),
-                firstDayMonth: daysMonth.getDay()  
-        }
-    }
-    
-    return (
-        days
-    )
+            for (i = 1; i <= daysMonth.getDate(); i++) {
 
+               currentmonth.arrDays.push(i)               
+            }
+            currentmonth.fisrtDayWeek = daysMonth.getDay()
+        })
 
+    return currentmonth
 }

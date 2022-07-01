@@ -16,8 +16,8 @@ export default class Mylist extends Component {
   state = { ...initial };
 
   async getAuth() {
-    const client_id = "c0fe3aacf5e3425cbbca4000d51f9255";
-    const client_secret = "60bf9c88879641048338831a166227ca";
+    const client_id = "";
+    const client_secret = "";
     const auth_token = Buffer.from(
       `${client_id}:${client_secret}`,
       "utf-8"
