@@ -18,8 +18,8 @@ a {
 
 .table-calendar{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
-  grid-template-rows: auto auto auto ;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
   grid-gap: 10px;
   width: 100vw;
   height: 100vh;
