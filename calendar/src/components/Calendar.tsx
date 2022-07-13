@@ -11,6 +11,7 @@ export default function Calendar(props) {
   // console.log(date.startOf("month").startOf("week").format("D"));
   // console.log(date.endOf("month").endOf("week").format("D"));
 
+
   useEffect(() => {
 
     let firsDay = date.clone().startOf("month").startOf("week");
@@ -18,7 +19,6 @@ export default function Calendar(props) {
 
     console.log(`Primeiro dia do mes ${firsDay}`);
     console.log(`ultimo dia do mes ${endDay}`);
-
     while (firsDay.isBefore(endDay.endOf("month"))) {
       month.push(
         Array(7)
@@ -26,25 +26,20 @@ export default function Calendar(props) {
           .map(() => firsDay.add(1, "day").clone())
       );
     }
-
-  });
-
-  function DaysWeek(props) {
-    return (
-          <span >
-            {props.map((el) => el.value)}
-          </span>
-    )
-  }
+  },[]);
 
   return (
     <div className="calendar">
       <Mes mes={date.month()} />
-      {month.map((current) => (
-       <div key={current}>
-            <DaysWeek key={current} value={current}/>
-        </div> 
-        ))}
+      {month.map((week) => (
+        <div className="week" key={week}>
+            {week.map((e)=>(
+              <span className="days">{e.format("DD")} </span>
+              
+            ))}
+        </div>
+      ))}
+    
     </div>
   );
 }
