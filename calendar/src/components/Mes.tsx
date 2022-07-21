@@ -1,7 +1,7 @@
 import Days from "./Days";
 
 interface MesAno {
-  mes?: number | string;
+  mes?: number | string ;
   ano?: number;
   horario?: number;
 }
@@ -21,9 +21,10 @@ export default function Mes(props?: MesAno) {
     "December",
   ];
   return (
-    <div className="blockMonth">
+    <div className="container">
         {month.map((current) => (
           <div className="Months">
+            
               <span className="currentMonth" key={current}>
                 {current}
               </span>

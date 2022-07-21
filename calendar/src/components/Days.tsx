@@ -29,7 +29,7 @@ export default function Days(props){
                     <span key={d}>
                         {d.format("DD")}
                     </span>
-               )}     
+               )}  
             </div>
         )}
     </div>
