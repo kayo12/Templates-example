@@ -14,3 +14,13 @@ a ideia e sempre alimenta-lo conforme meus conhecimentos em novas tecnologias e 
 
 ![Dimond music](imgProj/Dimond-music-home.png)
 ![Dimond music](imgProj/Dimond-music-player.png)
+
+<h2> Editor Rich-text </h2>
+
+![Rich-text](imgProj/Editor-rick-text.png)
+
+<h2> Twitter Home </h2>
+
+![Dimond music](imgProj/Twitter-page-login.png)
+
+
