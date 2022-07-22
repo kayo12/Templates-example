@@ -1,7 +1,6 @@
 
 <h1> Template-example </h1>
 
-![GitHub search hit counter](https://img.shields.io/github/search/kayo12/Templates-example/kayo12/Templates-example?style=flat-square)
 
 <p> Ola Dev </p>
 
