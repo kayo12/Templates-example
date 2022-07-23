@@ -1,6 +1,7 @@
 
 <h1> Template-example </h1>
 
+
 <p> Ola Dev </p>
 
 <p> Esse é um repositorio criado com base nos meus estudos desde paginas a projetos pessoais, aqui se encontram aplicações simples em HTML, CSS, JS, Node.js e React.
@@ -14,3 +15,13 @@ a ideia e sempre alimenta-lo conforme meus conhecimentos em novas tecnologias e 
 
 ![Dimond music](imgProj/Dimond-music-home.png)
 ![Dimond music](imgProj/Dimond-music-player.png)
+
+<h2> Editor Rich-text </h2>
+
+![Rich-text](imgProj/Editor-rick-text.png)
+
+<h2> Twitter Home </h2>
+
+![Dimond music](imgProj/Twitter-page-login.png)
+
+
