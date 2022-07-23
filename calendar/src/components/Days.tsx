@@ -3,7 +3,7 @@ import Moment from "moment";
 export default function Days(props){
     const [month, setMonth] = useState([]);
     const [date , setDate] = useState(
-      Moment().locale("pt").month(props.m).year(2022)
+      Moment().locale("pt").month(props.m).year(props.y)
     )
 
     useEffect(() => {
@@ -27,7 +27,7 @@ export default function Days(props){
 
       console.log(month);
     }, [date]);
-    
+
  return(
     <div>
         {month.map((week) =>
