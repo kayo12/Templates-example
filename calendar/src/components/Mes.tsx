@@ -24,11 +24,10 @@ export default function Mes(props?: MesAno) {
     <div className="container">
         {month.map((current) => (
           <div className="Months">
-            
               <span className="currentMonth" key={current}>
                 {current}
               </span>
-              <Days key={current} m={current}/>
+              <Days key={current} m={current} y={props.ano}/>
           </div>
         ))}
     </div>

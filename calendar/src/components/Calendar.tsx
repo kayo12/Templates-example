@@ -4,8 +4,11 @@ import Moment, { weekdays } from "moment";
 
 export default function Calendar(props) {
   return (
-    <div className="calendar">
-      <Mes/>
-    </div>
+      <div >
+        <div className="inputYear">
+              <input type="text" className="year" />
+        </div>
+        <Mes/>
+      </div>
   );
 }
