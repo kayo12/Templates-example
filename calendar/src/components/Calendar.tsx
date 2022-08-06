@@ -1,21 +1,24 @@
 import Mes from "./Mes";
-import useCalendar from "../hooks/useCalendar";
-import Moment, { weekdays } from "moment";
-import { useState } from "react";
-import { type } from "os";
-
-
-const [year, setYear] = useState(2022) 
-
+import { useEffect, useState, useSyncExternalStore} from "react";
 
 export default function Calendar(props) {
+  const [year, setYear] = useState('')
+ 
+  function OnChangeYear(){
+      let ye = (document.getElementById("year") as HTMLInputElement).value;
+        console.log(ye)
+       setYear(ye)
+  }
+
   return (
       <div className="calendar">
         <div className="inputYear">
               <label htmlFor="year">ano</label>
-              <input type="number" id="year" className="year" onChange={(e) => setYear(Number(e.target.value))}/>
+              <input type="text" id="year" className="year"  />
+            <button onClick={() => {OnChangeYear}}>Buscar</button>
         </div>
-        <Mes ano={year} />
+        <h1>{year}</h1>
+        <Mes ano={Number(year)}/>
       </div>
   );
 }

@@ -2,7 +2,7 @@ import Days from "./Days";
 
 interface MesAno {
   mes?: number | string ;
-  ano?: number;
+  ano?: number ;
   horario?: number;
 }
 export default function Mes(props?: MesAno) {
