@@ -17,11 +17,11 @@ export default function Calendar(props) {
   return (
     <div className="calendar">
       <div className="displayyear">
-        <label htmlFor="year">Ano: {year}</label>
+        <label htmlFor="year">Exibindo ano atual, informe um novo ano: {year}</label>
       </div>
       <div className="inputYear">
         <input type="text" id="year" className="year" />
-        <button onClick={OnChangeYear}>Buscar</button>
+        <button className="btnSearch"onClick={OnChangeYear}>Buscar</button>
       </div>
       <Mes ano={Number(year)} />
     </div>
