@@ -2,6 +2,7 @@ import Mes from "./Mes";
 import { useEffect, useState, useSyncExternalStore } from "react";
 
 export default function Calendar(props) {
+
   const [year, setYear] = useState("2021");
 
   useEffect(() => {
@@ -21,9 +22,12 @@ export default function Calendar(props) {
       </div>
       <div className="inputYear">
         <input type="text" id="year" className="year" />
-        <button className="btnSearch"onClick={OnChangeYear}>Buscar</button>
+        <button className="btnSearch"onClick={OnChangeYear} placeholder="Ex: 2025">Buscar</button>
       </div>
       <Mes ano={Number(year)} />
     </div>
   );
+
+
+  
 }

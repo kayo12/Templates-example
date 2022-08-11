@@ -2,15 +2,13 @@ import Moment from "moment";
 import { useState, useEffect } from "react";
 
 export default function Days(props) {
+  type day = "green" | "gray";
   const [month, setMonth] = useState([]);
   const [date, setDate] = useState(
     Moment().locale("pt").month(props.m).year(props.y)
   );
 
-  
-
   useEffect(() => {
-    
     let firstDay = date.clone().startOf("month").startOf("week");
     let endDay = date.clone().endOf("month").endOf("week");
     let Day = firstDay.clone().subtract(1, "day");
@@ -28,19 +26,30 @@ export default function Days(props) {
     }
 
     setMonth(arrayUpdate);
-    setDate(date.year(props.y))
-    console.log(month);
-  }, [date,props.y]);
+    setDate(date.year(props.y));
+
+    console.log(date);
+  }, [date, props.y]);
 
   return (
     <div>
       {month.map((week) => (
         <div key={week} className="week">
-          {week.map((d) => (
-            <span className="day" key={d._d.getTime() + props.month}>
-              {d.format("DD").toString()}
-            </span>
-          ))}
+          {week.map((d) =>
+
+            d.format("DD") + "" + d._d.getMonth() ===
+            d.format("DD") + "" + props.chave ? (
+              <span className="green" key={d._d.getDate() + "" + props.chave}>
+                {console.log(`monent ${d.format("DD")} do mes ${d._d.getUTCMonth()} do props  ${d._d.getDate()}  + ${props.chave} + ${props.m}`)}
+                {d.format("DD").toString()}
+              </span>
+            ) : (
+              <span className="gray" key={d._d.getDate() + "" + props.chave}>
+                {console.log(`monent ${d.format("DD")} do mes ${d._d.getUTCMonth()} do props  ${d._d.getDate()}  + ${props.chave} +  ${props.m}`)}
+                {d.format("DD").toString()}
+              </span>
+            )
+          )}
         </div>
       ))}
     </div>

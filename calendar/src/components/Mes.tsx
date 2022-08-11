@@ -7,27 +7,27 @@ interface MesAno {
 }
 export default function Mes(props?: MesAno) {
   let month = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Augosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
   ];
   return (
     <div className="container">
-        {month.map((current) => (
+        {month.map((current, index) => (
           <div className="Months">
               <span className="currentMonth" key={current}>
                 {current}
               </span>
-              <Days key={current} m={current} y={props.ano}/>
+              <Days chave={index} m={current} y={props.ano}/>
           </div>
         ))}
     </div>

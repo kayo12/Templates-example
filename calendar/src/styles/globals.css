@@ -60,12 +60,20 @@ font-size: 1.4rem;
 
 }
 
-.day{
+.green{
     display: block;
     padding: 0.9rem;
     font-size: 1rem;
-    color: #59c631;
+    color: #98ef78;
     width: 10%;
+}
+
+.gray{
+  display: block;
+  padding: 0.9rem;
+  font-size: 1rem;
+  color: #578c43;
+  width: 10%;
 }
 
 
