@@ -5,7 +5,7 @@ export default function Days(props) {
   type day = "green" | "gray";
   const [month, setMonth] = useState([]);
   const [date, setDate] = useState(
-    Moment().locale("pt").month(props.m).year(props.y)
+    Moment().locale("pt").month(props.k).year(props.y)
   );
 
   useEffect(() => {
@@ -38,14 +38,12 @@ export default function Days(props) {
           {week.map((d) =>
 
             d.format("DD") + "" + d._d.getMonth() ===
-            d.format("DD") + "" + props.chave ? (
-              <span className="green" key={d._d.getDate() + "" + props.chave}>
-                {console.log(`monent ${d.format("DD")} do mes ${d._d.getUTCMonth()} do props  ${d._d.getDate()}  + ${props.chave} + ${props.m}`)}
+            d.format("DD") + "" + props.k ? (
+              <span className="green" key={d._d.getDate() + "" + props.k}>
                 {d.format("DD").toString()}
               </span>
             ) : (
-              <span className="gray" key={d._d.getDate() + "" + props.chave}>
-                {console.log(`monent ${d.format("DD")} do mes ${d._d.getUTCMonth()} do props  ${d._d.getDate()}  + ${props.chave} +  ${props.m}`)}
+              <span className="gray" key={d._d.getDate() + "" + props.k}>
                 {d.format("DD").toString()}
               </span>
             )

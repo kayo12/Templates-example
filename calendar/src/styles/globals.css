@@ -22,7 +22,6 @@ a {
   display: flex;
   align-content: center;
   justify-content: center;
-  width: 100vw;
   height: 100vh;
 }
 
@@ -95,9 +94,14 @@ font-size: 1.4rem;
 }
 
 
+.inputYear input::placeholder {
+  color:rgb(235, 13, 13);
+}
+
 .inputYear .btnSearch {
-  background-color: #59c631;
-  border: none;
+  background-color: rgb(43, 43, 43);
+  border: 2px solid  #59c631;
+  color: #59c631;
   padding: 0.3rem 0.9rem;
   margin-left: 1rem;
   font-weight: 700;
@@ -105,7 +109,7 @@ font-size: 1.4rem;
 }
 
 .displayyear label{
-  font-size: 20px;  
+  font-size: 3rem;  
   font-weight: 800;
-  color: #ffffff;
+  color: #259a2e;
 }

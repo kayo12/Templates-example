@@ -3,7 +3,7 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 
 export default function Calendar(props) {
 
-  const [year, setYear] = useState("2021");
+  const [year, setYear] = useState("2022");
 
   useEffect(() => {
     OnChangeYear();
@@ -17,12 +17,13 @@ export default function Calendar(props) {
 
   return (
     <div className="calendar">
-      <div className="displayyear">
-        <label htmlFor="year">Exibindo ano atual, informe um novo ano: {year}</label>
-      </div>
+      
       <div className="inputYear">
         <input type="text" id="year" className="year" />
         <button className="btnSearch"onClick={OnChangeYear} placeholder="Ex: 2025">Buscar</button>
+      </div>
+      <div className="displayyear">
+        <label htmlFor="year"> {year}</label>
       </div>
       <Mes ano={Number(year)} />
     </div>
