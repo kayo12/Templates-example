@@ -5,7 +5,7 @@ import Music from '../components/Music'
 import Player from '../components/Player'
 import MyList from '../components/MyList'
 import Profile from '../components/Profile'
-
+import Login from '../components/Login'
 
 export default props =>
 <Switch>
@@ -13,6 +13,7 @@ export default props =>
     <Route exact path='/profile' component={Profile}/>
     <Route exact path='/mylist' component={MyList}/>
     <Route path='/player' component={Player}/>
-    <Redirect from='*' to='/'/>
+    <Route path='/login' component={Login}/>
+    {/* <Redirect from='*' to='/'/> */}
 </Switch>
 

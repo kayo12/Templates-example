@@ -2,33 +2,53 @@ import Mes from "./Mes";
 import { useEffect, useState, useSyncExternalStore } from "react";
 
 export default function Calendar(props) {
-
-  const [year, setYear] = useState("2022");
+  const date = new Date().getFullYear();
+  const [msg, setMsg] = useState("");
+  const [year, setYear] = useState(date);
 
   useEffect(() => {
     OnChangeYear();
-  }, [year]);
+  }, [year,msg]);
 
   function OnChangeYear() {
-    let ye = (document.getElementById("year") as HTMLInputElement).value;
-    console.log(ye);
-    return setYear(ye);
-  }
+  
+    try {
+      let ye = (document.getElementById("year") as HTMLInputElement).value;
 
+      if (Number(ye) < 0) {
+        setMsg("Por favor, insira um valor valido Ex: 2025");
+        setYear(this.date);
+      }else{
+        setMsg("")
+      }
+      if (ye !== "") {
+        setYear(Number(ye));
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
   return (
     <div className="calendar">
-      
       <div className="inputYear">
-        <input type="text" id="year" className="year" />
-        <button className="btnSearch"onClick={OnChangeYear} placeholder="Ex: 2025">Buscar</button>
+        <input
+          type="number"
+          id="year"
+          className="year"
+          placeholder="Digite apenas o ano desejado Ex: 2025"
+        />
+        <button className="btnSearch" onClick={OnChangeYear}>
+          Buscar
+        </button>
       </div>
       <div className="displayyear">
-        <label htmlFor="year"> {year}</label>
+        {msg == "" ? (
+          <label htmlFor="year" id="year-label"> {year}</label>
+        ) : (
+          <label htmlFor="msg" id="msg-label">{msg}</label>
+        )}
       </div>
-      <Mes ano={Number(year)} />
+      <Mes anos={year} />
     </div>
   );
-
-
-  
 }
