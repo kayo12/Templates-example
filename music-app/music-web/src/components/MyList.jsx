@@ -1,23 +1,35 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { Component, useState, useEffect } from "react";
-import SpotifyWebApi from "spotify-web-api-js";
+import React, { Component} from "react";
+import SpotifyApi from 'spotify-web-api-js'
 import "./MyList.css";
 import album from "../assests/img/album-eminem.jpg";
 
 const initial = {
   title: "Lista de musicas e generos",
   msg: "o que acha de escolher uma musica para alegrar seu dia",
-  list: [],
+  list: {},
   listAlbum: [],
+  image: {}
 };
+
+const SpotApi = new SpotifyApi() 
 export default class Mylist extends Component {
   state = { ...initial };
 
+
   getArtist(){
-    SpotifyWebApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function (err, data) {
-      if (err) console.error(err);
-      else console.log('Artist albums', data);
-    }); 
+
+    console.log(`TOKEN: ${this.props.token}`);
+    SpotApi.setAccessToken(this.props.token);  
+    SpotApi.getArtist('2hazSY4Ef3aB9ATXW7F5w3').then(
+      function (data) {
+        console.log('Artist information',data.genres);
+        this.setState({list: JSON.stringify(data)})
+      },
+      function (err) {
+        console.error(err);
+      }
+    );
   }
   render() {
     return (
@@ -35,7 +47,7 @@ export default class Mylist extends Component {
           <div className="list-album">
             <img src={album} class="img-album" />
             <div className="item-album">
-              <span>TITULO</span>
+              <span>{this.state}</span>
               <p>Lançamento: 2012</p>
               <button> Saiba mais</button>
             </div>

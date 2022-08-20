@@ -4,7 +4,6 @@ import React from 'react';
 import './Music.css'
 import Listen_Music from '../assests/img/home-listen-music.png'
 
-
 // eslint-disable-next-line import/no-anonymous-default-export
 export default props => 
     <div className="music"> 

@@ -22,19 +22,15 @@ const Home = (props) => {
     const _spotify = getTokenUrl();
 
     if(_spotify){
-      setToken(_spotify) 
-      const spot = new SpotifyApi()
-      spot.setAccessToken(_spotify)
-      
+      setToken(_spotify)  
     }
-
   }, []);
 
   return (
     <HashRouter>
       <div className="home">
         <Nav />
-        <Routes />
+        <Routes token={token}/>
         <Footer />
       </div>
     </HashRouter>
